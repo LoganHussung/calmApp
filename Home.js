@@ -6,8 +6,8 @@ export default class HomePage extends Component {
 
   render() {
     return (
-      <View style={{justifyContent:'space-around', alignItems:'center', marginTop:200}} >
-        <Image source={require('./Images/calmLogo.png')} />
+      <View style={{alignItems:'center',marginTop:20}} >
+        <Image style={{marginTop:200}} source={require('./Images/calmLogo.png')} />
         <Text style={{textAlign:'center', color:'grey'}}>Help for you, care for them.</Text>
       </View>
 

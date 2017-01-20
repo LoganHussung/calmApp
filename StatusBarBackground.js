@@ -5,7 +5,7 @@ export default class StatusBarBackground extends Component {
 
   render() {
     return (
-      <View style={{height:20, margin:0, padding:0, backgroundColor:'white'}}></View>
+      <View style={{position:'relative',margin:0, padding:0, backgroundColor:'white'}}></View>
     )
   }
 }
