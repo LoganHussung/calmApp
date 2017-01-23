@@ -21,7 +21,7 @@ export default class NeedPage extends Component {
           <Image style={{marginTop:20}} source={require('./Images/calmLogo.png')} />
         </View>
         <ScrollView>
-          <Swipeable onRef={ref => this.swipeable = ref} rightButtons={rightButtons}>
+          <Swipeable onRef={ref => this.swipeable = ref} leftButtons={leftButtons}>
             <Text style={styles.neededItem}>Primary Doctor Information</Text>
           </Swipeable>
           <Swipeable onRef={ref => this.swipeable = ref} leftButtons={leftButtons}>
