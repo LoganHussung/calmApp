@@ -11,7 +11,6 @@ import Tabs from 'react-native-tabs';
 import HomePage from './Home';
 import NeedPage from './Needs';
 import EmailPage from './Email';
-import UpdatePage from './Update';
 import TravelPage from './Travel';
 
 const width = Dimensions.get('window').width;
@@ -35,8 +34,6 @@ export default class Navigation extends Component {
       case 'EmailPage':
         return <View><EmailPage /></View>;
 
-      case 'UpdatePage':
-        return <View><UpdatePage /></View>;
 
       case 'TravelPage':
         return <View><TravelPage /></View>;
@@ -59,7 +56,6 @@ export default class Navigation extends Component {
           <Tabs selected={this.state.page} style={{position:'absolute', bottom:0,right:0, backgroundColor:'white', marginBottom:20,}} selectedStyle={{color:'red'}} onSelect={this.onTabSelect.bind(this)}>
               <Text name="NeedPage">Need</Text>
               <Text name="EmailPage">Email</Text>
-              <Text name="UpdatePage">Update</Text>
               <Text name="TravelPage">Travel</Text>
           </Tabs>
       </View>

@@ -252,6 +252,7 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		1862C5E076444C618576AC77 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		3C833AD5DE1E4D45A0364CF7 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
+		3EE8F13A1E40057200D001CD /* CarrierBundleUtilities.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = CarrierBundleUtilities.tbd; path = usr/lib/CarrierBundleUtilities.tbd; sourceTree = SDKROOT; };
 		41A7318209E44839AD665D3E /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		466FD8E3C9634A0AB71FA7C4 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
@@ -411,6 +412,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		3EE8F1391E40057200D001CD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3EE8F13A1E40057200D001CD /* CarrierBundleUtilities.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5E91572E1DD0AC6500FF2AA8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -465,6 +474,7 @@
 				00E356EF1AD99517003FC87E /* calmAppTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				F304D68F76474B23AAA5F773 /* Resources */,
+				3EE8F1391E40057200D001CD /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
