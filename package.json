@@ -12,6 +12,7 @@
     "react-native-checkbox": "^1.1.0",
     "react-native-fbsdk": "^0.4.0",
     "react-native-mail": "^3.0.1",
+    "react-native-maps": "^0.12.4",
     "react-native-router-flux": "^3.37.0",
     "react-native-swipeable": "^0.3.2",
     "react-native-tabs": "^1.0.9",
