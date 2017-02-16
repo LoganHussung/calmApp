@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, Text, View,Image,ScrollView} from 'react-native';
+import { AsyncStorage, AppRegistry, StyleSheet, Text, View,Image,ScrollView} from 'react-native';
 import CheckBox from 'react-native-checkbox';
 
 export default class NeedItemPage extends Component {
@@ -10,17 +10,21 @@ export default class NeedItemPage extends Component {
     }
   }
 
-  whenChanged (props){
-    this.setState({
-      checked: true
-    })
-  }
+// getChecklist (id){
+//   AsyncStorage.getItem('checked' + id).then((checked) => {
+//     this.setState({
+//       'checked':checked === '1' ? true : false
+//     });
+//     console.log('checked' + id, checked);
+//   }).done()
+// }
+
 
   render() {
     return (
         <View>
-          <CheckBox containerStyle={{margin:20,paddingBottom:10, borderBottomWidth:2, borderStyle:'solid', borderBottomColor:'grey'}} label={this.props.labelName} checked={this.state.checked}
-            onChange={this.whenChanged.bind(this)}/>
+          <CheckBox containerStyle={{margin:20,paddingBottom:10, borderBottomWidth:2, borderStyle:'solid', borderBottomColor:'grey'}} label={this.props.labelName} checked={this.props.checked}
+            onChange={this.props.whenChanged.bind(this, this.props.id)}/>
         </View>
 
     );

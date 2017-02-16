@@ -49,8 +49,8 @@ export default class Navigation extends Component {
       <View style={{height:height}}>
         {this.renderPage()}
           <Tabs selected={this.state.page} style={{position:'absolute', bottom:0,right:0, backgroundColor:'white', marginBottom:20,}} selectedStyle={{color:'red'}} onSelect={this.onTabSelect.bind(this)}>
-              <Text name="NeedPage">Need</Text>
-              <Text name="EmailPage">Email</Text>
+              <Text name="NeedPage">Checklist</Text>
+              <Text name="EmailPage">Notify</Text>
               <Text name="TravelPage">Hospital</Text>
           </Tabs>
       </View>
