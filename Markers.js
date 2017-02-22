@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Text, Dimensions, TouchableOpacity } from 'react-native';
-import MapWrapper from './MapWrapper';
+import MapwrapperPage from './Mapwrapper';
 import MapView from 'react-native-maps';
 
 const { width, height } = Dimensions.get('window');

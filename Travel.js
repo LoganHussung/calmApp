@@ -4,6 +4,7 @@ import axios from 'axios';
 import Router from './Router';
 import Button from 'react-native-button';
 import MapView from 'react-native-maps';
+import MapwrapperPage from './Mapwrapper'
 import HomePage from './Home';
 
 
@@ -27,23 +28,23 @@ export default class TravelPage extends Component {
 
   //request to get the two center coordinates from api
   getCenter() {
-    // axios.get("https://api.mapbox.com/geocoding/v5/mapbox.places/" + this.state.city + ".json?access_token=sk.eyJ1IjoiaHVzc3UwNzIiLCJhIjoiY2l6YTU2cmJ5MDFyeDMwbzZ5eXNkZGhqZSJ9.o8pqt076DlvXFIeUAGxxpQ")
-    // .then((response)=> {
-    //   let newCenter = response.data.features[0].center.slice(0);
-    //   let longLatCoordinates = newCenter;
-    //   let latLongCoordinates = [longLatCoordinates[1], longLatCoordinates[0]];
-    //   this.setState({
-    //     center: newCenter,
-    //     newItemValue: '',
-    //     coordinates:latLongCoordinates
-    //   })
-      // axios.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?radius=8000&location=" + this.state.coordinates + "&type=hospital&key=AIzaSyBBg_IhpIatNPRT6HQRoWX35q2cQXEDL6Q")
-      // .then((response)=> {
-      //   let newHospital = response.data.results;
-      //   this.setState({
-      //     hospital: newHospital
-      //   })
-      // })
+    axios.get("https://api.mapbox.com/geocoding/v5/mapbox.places/" + this.state.value + ".json?access_token=pk.eyJ1IjoiaHVzc3UwNzIiLCJhIjoiY2l6YTU2cmJ5MDFyeDMwbzZ5eXNkZGhqZSJ9.o8pqt076DlvXFIeUAGxxpQ")
+    .then((response) => {
+      let newCenter = response.data.features[0].center.slice(0);
+      let longLatCoordinates = newCenter;
+      let latLongCoordinates = [longLatCoordinates[1], longLatCoordinates[0]];
+      this.setState({
+        center: newCenter,
+        newItemValue: '',
+        coordinates:latLongCoordinates
+      })
+      axios.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?radius=8000&location=" + this.state.coordinates + "&type=hospital&key=AIzaSyBBg_IhpIatNPRT6HQRoWX35q2cQXEDL6Q")
+      .then((response)=> {
+        let newHospital = response.data.results;
+        this.setState({
+          hospitals: newHospital
+        })
+      })
 
   axios.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?radius=8000&location=" + this.state.coordinates + "&type=hospital&key=AIzaSyBBg_IhpIatNPRT6HQRoWX35q2cQXEDL6Q")
     .then((response) => {
@@ -56,11 +57,16 @@ export default class TravelPage extends Component {
     .catch(function (error) {
       console.log(error);
     })
+})
 }
-
 submitCity(){
-  alert('Hello')
-}
+  if (this.state.value === '' || this.state.value === null || this.state.value === 'undefined'){
+        alert('Please Go Back and Enter City');
+      } else {
+        this.getCenter();
+      }
+  }
+
 
   render() {
     return (
@@ -76,9 +82,12 @@ submitCity(){
         />
         <Button
           styleDisabled={{color: 'red'}}
+          value={this.state.city}
           onPress={this.submitCity.bind(this)}>Go
         </Button>
-      <MapView style={styles.map}
+        <MapwrapperPage center={this.state.center} hospitals={this.state.hospitals} description={this.state.description}/>
+
+      {/* <MapView style={styles.map}
          provider={this.props.provider}
          style={styles.map}
          region={{
@@ -87,7 +96,7 @@ submitCity(){
            latitudeDelta: .12,
            longitudeDelta: .12
                   }}>
-       </MapView>
+       </MapView> */}
       </View>
     );
   }
