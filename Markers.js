@@ -43,12 +43,24 @@ class Markers extends React.Component {
       <View style={styles.container}>
         <MapView
           onPress={(e) => this.onMapPress(e)}
+          region={{
+            latitude: this.props.center[1],
+            longitude: this.props.center[0],
+            latitudeDelta: this.state.latitudeDelta,
+            longitudeDelta: this.state.longitudeDelta
+          }}
         >
           {this.state.markers.map(marker => (
             <MapView.Marker
               key={marker.key}
               coordinate={marker.coordinate}
               pinColor={marker.color}
+              region={{
+                latitude: this.props.center[1],
+                longitude: this.props.center[0],
+                latitudeDelta: this.state.latitudeDelta,
+                longitudeDelta: this.state.longitudeDelta
+              }}
             />
           ))}
         </MapView>

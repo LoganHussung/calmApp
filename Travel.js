@@ -21,12 +21,11 @@ export default class TravelPage extends Component {
       value:''
     };
   }
-  //
+
   componentDidMount() {
     this.getCenter();
   }
 
-  //request to get the two center coordinates from api
   getCenter() {
     axios.get("https://api.mapbox.com/geocoding/v5/mapbox.places/" + this.state.value + ".json?access_token=pk.eyJ1IjoiaHVzc3UwNzIiLCJhIjoiY2l6YTU2cmJ5MDFyeDMwbzZ5eXNkZGhqZSJ9.o8pqt076DlvXFIeUAGxxpQ")
     .then((response) => {
@@ -45,19 +44,24 @@ export default class TravelPage extends Component {
           hospitals: newHospital
         })
       })
+      .catch((error)=>{
+         console.log("Api call error");
+      });
 
   axios.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?radius=8000&location=" + this.state.coordinates + "&type=hospital&key=AIzaSyBBg_IhpIatNPRT6HQRoWX35q2cQXEDL6Q")
     .then((response) => {
-      console.log(response.data);
       let newID = response.data.results[0].place_id;
       this.setState({
         id: newID
       })
     })
-    .catch(function (error) {
-      console.log(error);
-    })
+    .catch((error)=>{
+       console.log("Api call error");
+    });
 })
+.catch((error)=>{
+   console.log("Api call error");
+});
 }
 submitCity(){
   if (this.state.value === '' || this.state.value === null || this.state.value === 'undefined'){
@@ -80,23 +84,17 @@ submitCity(){
           onChangeText={(value) => this.setState({value})}
           value={this.state.city}
         />
-        <Button
-          styleDisabled={{color: 'red'}}
-          value={this.state.city}
-          onPress={this.submitCity.bind(this)}>Go
-        </Button>
+        <View style={{alignItems:'center'}}>
+          <TouchableOpacity style={{width:150,backgroundColor:'#FF011B', borderStyle:'solid',borderBottomWidth:3, borderColor:'#BD3E31',borderRadius:3,margin:10, shadowColor:'#BD3E31'}}>
+            <Button
+              style={{color:'white'}}
+              styleDisabled={{color: 'red'}}
+              value={this.state.city}
+              onPress={this.submitCity.bind(this)}> Find Hospitals
+            </Button>
+          </TouchableOpacity>
+        </View>
         <MapwrapperPage center={this.state.center} hospitals={this.state.hospitals} description={this.state.description}/>
-
-      {/* <MapView style={styles.map}
-         provider={this.props.provider}
-         style={styles.map}
-         region={{
-           latitude: 44.9778,
-           longitude: -93.2650,
-           latitudeDelta: .12,
-           longitudeDelta: .12
-                  }}>
-       </MapView> */}
       </View>
     );
   }
@@ -110,4 +108,5 @@ const styles = StyleSheet.create({
     height: 500,
     width: 500,
   },
+
 })
