@@ -27,7 +27,7 @@ export default class TravelPage extends Component {
 
   //request to get the two center coordinates from api
   getCenter() {
-    // axios.get("https://api.mapbox.com/geocoding/v5/mapbox.places/" + this.props.route.params.city + ".json?access_token=sk.eyJ1IjoiaHVzc3UwNzIiLCJhIjoiY2l6YTU2cmJ5MDFyeDMwbzZ5eXNkZGhqZSJ9.o8pqt076DlvXFIeUAGxxpQ")
+    // axios.get("https://api.mapbox.com/geocoding/v5/mapbox.places/" + this.state.city + ".json?access_token=sk.eyJ1IjoiaHVzc3UwNzIiLCJhIjoiY2l6YTU2cmJ5MDFyeDMwbzZ5eXNkZGhqZSJ9.o8pqt076DlvXFIeUAGxxpQ")
     // .then((response)=> {
     //   let newCenter = response.data.features[0].center.slice(0);
     //   let longLatCoordinates = newCenter;
