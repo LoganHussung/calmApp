@@ -18,7 +18,6 @@ export default class NeedPage extends Component {
   getChecklist() {
     AsyncStorage.getItem('needs').then((checked) => {
       if (checked == null) {
-        alert('Yo')
         this.setState({
           needs: [ false, false,false,false,false,false,false
           ]

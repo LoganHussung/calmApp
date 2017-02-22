@@ -6,6 +6,7 @@ import Tabs from 'react-native-tabs';
 import HomePage from './Home';
 import NeedPage from './Needs';
 import EmailPage from './Email';
+import UpdatePage from './Update';
 import TravelPage from './Travel';
 
 const width = Dimensions.get('window').width;
@@ -29,6 +30,8 @@ export default class Navigation extends Component {
       case 'EmailPage':
         return <View><EmailPage /></View>;
 
+      case 'UpdatePage':
+        return <View><UpdatePage /></View>;
 
       case 'TravelPage':
         return <View><TravelPage /></View>;
@@ -39,7 +42,6 @@ export default class Navigation extends Component {
     };
 
     onTabSelect(e) {
-      console.log(e.props.name);
       this.setState({page:e.props.name})
     }
 

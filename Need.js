@@ -10,16 +10,6 @@ export default class NeedItemPage extends Component {
     }
   }
 
-// getChecklist (id){
-//   AsyncStorage.getItem('checked' + id).then((checked) => {
-//     this.setState({
-//       'checked':checked === '1' ? true : false
-//     });
-//     console.log('checked' + id, checked);
-//   }).done()
-// }
-
-
   render() {
     return (
         <View>
