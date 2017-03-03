@@ -10,7 +10,9 @@ When you open the calm app you will be presented with three choices. The choices
 This app is built for the first responder or closest family member to the one being rushed to the hospital. It is meant to put their mind at ease and focus on the person who needs the care.
 
 ### Future of Calm
-1 Hoping to add a way for the user of Calm to travel to the hospital by the click of a button. I am looking to integrate the Uber API. 2 I would like to make the app a little more personal with having an account and login screen. 3 Document Storage, in the future I hope the calm app is a place where the user can store their will, health care directive and medical records.
+1. Hoping to add a way for the user of Calm to travel to the hospital by the click of a button. I am looking to integrate the Uber API.
+2. I would like to make the app a little more personal with having an account and login screen.
+3. Document Storage, in the future I hope the calm app is a place where the user can store their will, health care directive and medical records.
 
 ### Behind the scenes/ Tech Stack
 * React Native / JavaScript
